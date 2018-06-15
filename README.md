@@ -2,13 +2,13 @@
 
 Published MATLAB code for the PLRHC-BIC algorithm for learning pairwise Markov network structures with logistic regression.
 
-The logistic regression computations rely on the software package minFunc by Mark Schmidt (2005) (https://www.cs.ubc.ca/~schmidtm/Software/minFunc.html). The complete set of .m and .mex files for the current version (2012) of minFunc are included in this repository. In addition, two files from the L1General package by the same author and two custom loss functions for weighted data are included in the custom folder within.
+The logistic regression computations rely on the software package minFunc by Mark Schmidt (2005) (https://www.cs.ubc.ca/~schmidtm/Software/minFunc.html). The complete set of .m and .mex files for the current version (2012) of minFunc are included in this repository. In addition, three files from the L1General package by the same author and two custom loss functions for weighted data are included in the custom folder within.
 
 ## How to use
 
 ### Data set format
 
-Your data set should be a Nxd matrix in 'double' format, where N is the number of data samples (rows) and d is the number of variables (columns). The outcome space must be {1, 2, ...}. The code supports polytomous variables, but the method has been rigorously tested on only binary variables. Use `test_data.m` to see if your data is in the right format.
+Your data set should be a Nxd matrix in 'double' format, where N is the number of data samples (rows) and d is the number of variables (columns). The outcome space must be {1, 2, ...}. The code supports polytomous variables, but the method has been rigorously tested only on binary variables. Use `test_data.m` to see if your data is in the right format.
 
 ### Compile MEX files
 

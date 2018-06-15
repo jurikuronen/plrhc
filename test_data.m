@@ -12,9 +12,9 @@ function [good tests] = test_data(data, N)
 
     % Outcomes should be {1, 2, ...}
     u = unique(data);
-    test1 = 0;
+    test1 = 1;
     for i = 1:length(u)
-        test1 = (test1 || (u(i) == i));
+        test1 = (test1 && (u(i) == i));
     end
 
     % Data matrix should be in 'double' format

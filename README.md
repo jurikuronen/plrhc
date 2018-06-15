@@ -38,7 +38,7 @@ depth = 3; % Search spaces will contain nodes within this graph-theoretic distan
 2) Run the following:
 ```
 Gstar = plr(data, g, penalty, parallel); % PLR
-Ghator = hcor(data, Gstar, g, penalty, depth, parallel); % Solution given by PLRHC_OR
+Ghator = hcor(data, Gstar, g, penalty, depth, parallel); % Solution given by PLRHC_OR-BIC
 Ghat = hc(data, Ghator, g, penalty, 0); % Solution given by PLRHC-BIC
 ```
 

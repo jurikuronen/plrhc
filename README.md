@@ -2,13 +2,23 @@
 
 Published MATLAB code for the PLRHC-BIC algorithm for learning pairwise Markov network structures with logistic regression.
 
-The logistic regression computations rely on the software package minFunc by Mark Schmidt (2005) (https://www.cs.ubc.ca/~schmidtm/Software/minFunc.html). The complete set of .m and .mex files for the current version (2012) of minFunc are included in this repository. In addition, three files from the L1General package by the same author and two custom loss functions for weighted data are included in the custom folder within.
+The logistic regression computations rely on the software package minFunc by Mark Schmidt (2005) (https://www.cs.ubc.ca/~schmidtm/Software/minFunc.html). The complete set of `.m` and `.mex` files for the current version (2012) of minFunc is included in this repository. In addition, three files from the L1General package by the same author and two custom loss functions for weighted data are included in the `custom` folder.
+
+**Disclaimer:** This code and the original README were last updated in 2018 and may be out of date, especially for newer MATLAB versions. If you encounter any problems, please open an issue.
+
+## Table of contents
+- [How to use](#how-to-use)
+  - [Data set format](#data-set-format)
+  - [Compile MEX files](#compile-mex-files)
+  - [Learn the Markov network structure from data](#learn-the-markov-network-structure-from-data)
+- [License](#license)
+- [Cite](#cite)
 
 ## How to use
 
 ### Data set format
 
-Your data set should be a Nxd matrix in 'double' format, where N is the number of data samples (rows) and d is the number of variables (columns). The outcome space must be {1, 2, ...}. The code supports polytomous variables, but the method has been rigorously tested only on binary variables. Use `test_data.m` to see if your data is in the right format.
+Your data set should be an `N x d` matrix in `double` format, where `N` is the number of data samples (rows) and `d` is the number of variables (columns). The outcome space must be `{1, 2, ...}`. The code supports polytomous variables, but the method has been rigorously tested only on binary variables. Use `test_data.m` to see if your data is in the right format.
 
 ### Compile MEX files
 
@@ -25,9 +35,10 @@ cd minFunc_2012
 mexAll
 ```
 
-### Learn the Markov network structure from data.
+### Learn the Markov network structure from data
 
-To run the full PLRHC-BIC with gamma = 0.5:
+To run the full PLRHC-BIC with `gamma = 0.5`:
+
 1) Set the following in MATLAB:
 ```
 g = 0.5; % Gamma value
@@ -42,3 +53,12 @@ Ghator = hcor(data, Gstar, g, penalty, depth, parallel); % Solution given by PLR
 Ghat = hc(data, Ghator, g, penalty, 0); % Solution given by PLRHC-BIC
 ```
 
+## License
+MIT License (see [LICENSE](LICENSE)).
+
+## Cite
+**plrhc** was developed as part of an academic project. Please cite:
+
+* Kuronen, J., Corander, J., & Pensar, J. (2025). Learning pairwise Markov network structures using correlation neighborhoods. Communications in Statistics - Simulation and Computation, 1–13. https://doi.org/10.1080/03610918.2025.2602032
+
+* https://github.com/jurikuronen/plrhc
